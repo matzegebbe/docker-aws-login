@@ -7,11 +7,16 @@ for example we have this task in an build-plan:
 you have to set your AWS credentials and region (eu-west-1)
 
 ### preform a login with the container
-$(docker run --rm matzeihn/aws-cli "AFDGJSKADFKALSDFJASKDLF" "45345/fdfaADSFIJLKSDFASD" "eu-west-1")
+
+YOUR_ACCESS_KEY YOUR_SECRET_ACCESS_KEY REGION+
+
+```bash
+$(docker run --rm matzeihn/docker-aws-login "AFDGJSKADFKALSDFJASKDLF" "45345/fdfaADSFIJLKSDFASD" "eu-west-1")
+```
 
 ### bamboo task example
 
-```
+```bash
 #!/bin/bash
 
 docker images hellmann/awscli | grep -q awscli
