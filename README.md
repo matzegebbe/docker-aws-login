@@ -8,7 +8,7 @@ you have to set your AWS credentials and region (eu-west-1)
 
 ### preform a login with the container
 
-YOUR_ACCESS_KEY YOUR_SECRET_ACCESS_KEY REGION+
+YOUR_ACCESS_KEY YOUR_SECRET_ACCESS_KEY REGION
 
 ```bash
 $(docker run --rm matzeihn/docker-aws-login "AFDGJSKADFKALSDFJASKDLF" "45345/fdfaADSFIJLKSDFASD" "eu-west-1")
