@@ -14,7 +14,7 @@ YOUR_ACCESS_KEY YOUR_SECRET_ACCESS_KEY REGION+
 $(docker run --rm matzeihn/docker-aws-login "AFDGJSKADFKALSDFJASKDLF" "45345/fdfaADSFIJLKSDFASD" "eu-west-1")
 ```
 
-### bamboo task example
+### bamboo task example (including a docker build if image does not exist)
 
 ```bash
 #!/bin/bash
