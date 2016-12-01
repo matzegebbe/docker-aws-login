@@ -1,10 +1,15 @@
-# docker-aws-cli
+# docker-aws-login
 
 this docker aws-cli is used to preform an aws login so you are able to push & pull images
 
 for example we have this task in an build-plan:
 
 you have to set your AWS credentials and region (eu-west-1)
+
+### preform a login with the container
+$(docker run --rm matzeihn/aws-cli "AFDGJSKADFKALSDFJASKDLF" "45345/fdfaADSFIJLKSDFASD" "eu-west-1")
+
+### bamboo task example
 
 ```
 #!/bin/bash
@@ -18,8 +23,8 @@ MAINTAINER Mathias Gebbe <mathias.gebbe@hellmann.net>
 
 RUN pip install awscli --ignore-installed six
 
-ENV aws_access_key_id $AWS_ACCESS_KEY
-ENV aws_secret_access_key $AWS_SECRET_ACCESS_KEY 
+ENV aws_access_key_id AWS_ACCESS_KEY
+ENV aws_secret_access_key AWS_SECRET_ACCESS_KEY 
 
 RUN mkdir /root/.aws/
 RUN printf "[default]\nregion = eu-west-1\n" > /root/.aws/config
