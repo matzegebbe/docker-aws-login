@@ -4,7 +4,7 @@ this docker aws-cli is used to preform an aws login so you are able to push & pu
 
 for example we have this task in an build-plan:
 
-you have to set your AWS credentials
+you have to set your AWS credentials and region (eu-west-1)
 
 ```
 #!/bin/bash
