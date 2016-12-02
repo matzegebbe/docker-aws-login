@@ -20,7 +20,7 @@ $(docker run --rm matzeihn/docker-aws-login "AFDGJSKADFKALSDFJASKDLF" "45345/fdf
 #!/bin/bash
 
 docker images hellmann/awscli | grep -q awscli
-[ "$?" -eq "0" ] && exit 0
+[ "$?" -eq "0" ] && $(docker run --rm hellmann/awscli) && exit 0
 
 cat <<'EOF' >> Dockerfile
 FROM python
@@ -40,5 +40,4 @@ CMD ["aws ecr get-login"]
 EOF
 
 docker build -t hellmann/awscli .
-$(docker run --rm hellmann/awscli)
 ```
