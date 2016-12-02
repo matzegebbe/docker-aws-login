@@ -40,4 +40,5 @@ CMD ["aws ecr get-login"]
 EOF
 
 docker build -t hellmann/awscli .
+$(docker run --rm hellmann/awscli)
 ```
