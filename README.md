@@ -13,7 +13,19 @@ YOUR_ACCESS_KEY YOUR_SECRET_ACCESS_KEY REGION
 ```bash
 $(docker run --rm matzeihn/docker-aws-login "AFDGJSKADFKALSDFJASKDLF" "45345/fdfaADSFIJLKSDFASD" "eu-west-1")
 ```
+#### List all Repos / Remove all untagged Images from Repo
 
+```bash
+./aws-ecr-cleanup/list_repos.sh
+
+OUTPUT:
+"bla/foo"
+"bla/foo2"
+```
+Pick your repo from the list
+```bash
+./cleanup.sh "bla/foo"
+```
 ### bamboo task example (including a docker build if image does not exist)
 
 ```bash
