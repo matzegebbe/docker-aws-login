@@ -26,6 +26,12 @@ Pick your repo from the list
 ```bash
 ./aws-ecr-cleanup/cleanup.sh "bla/foo"
 ```
+
+or for automated
+```bash
+ yes | aws-ecr-cleanup/cleanup.sh "hellmann/hps/common/zuul"
+```
+
 ### bamboo task example (including a docker build if image does not exist)
 
 ```bash
