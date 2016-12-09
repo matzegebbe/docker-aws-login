@@ -24,7 +24,7 @@ OUTPUT:
 ```
 Pick your repo from the list
 ```bash
-./cleanup.sh "bla/foo"
+./aws-ecr-cleanup/cleanup.sh "bla/foo"
 ```
 ### bamboo task example (including a docker build if image does not exist)
 
