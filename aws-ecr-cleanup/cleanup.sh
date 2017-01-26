@@ -16,12 +16,19 @@ for i in $(aws ecr list-images --filter '{"tagStatus": "UNTAGGED"}' --repository
    imageDigest="$imageDigest imageDigest=${i}"
 done
 
+imageDigest=( $imageDigest )
+
 read -r -p "Are you sure to remove all untagged images? [y/N] " response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
 then
    if [ -n "$imageDigest" ]; then
-       aws ecr batch-delete-image --repository-name $REPONAME --image-ids $imageDigest 
+     while [ "${#imageDigest[@]}" -gt 0 ]
+     do
+       aws ecr batch-delete-image --repository-name $REPONAME --image-ids ${imageDigest[@]:0:100}
+       imageDigest=( ${imageDigest[@]:100} )
+     done
    fi
 else
  exit 1
 fi
+
